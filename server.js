@@ -15,15 +15,8 @@ app.use(express.json());
 
 
 ////routes////
-//get
-app.get('/', function (req, res) {
-
-})
-//post
-
-//update
-
-//delete
+var routes = ('../controllers/burgers_contollers.js');
+app.use(routes);
 
 
 ///listen///

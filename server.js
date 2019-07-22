@@ -1,9 +1,11 @@
 ///dependancies///
 var express = require('express');
-var exphbs = require('express-handlebars');
-var app = express();
 ////port///
 var PORT = process.env.PORT || 3000;
+
+var exphbs = require('express-handlebars');
+var app = express();
+
 
 ////PBULIC///
 app.use(express.static('public'));
@@ -15,7 +17,7 @@ app.use(express.json());
 
 
 ////routes////
-var routes = ('../controllers/burgers_contollers.js');
+var routes = require("./controllers/burgers_controllers.js");
 app.use(routes);
 
 

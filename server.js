@@ -1,9 +1,9 @@
 ///dependancies///
 var express = require('express');
 ////port///
-var PORT = process.env.PORT || 3000;
+var PORT = process.env.PORT || 3007;
 
-var exphbs = require('express-handlebars');
+
 var app = express();
 
 
@@ -14,6 +14,12 @@ app.use(express.static('public'));
 ////middleware///
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+////handlebars///
+var exphbs = require('express-handlebars');
+
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
 
 
 ////routes////

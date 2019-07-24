@@ -1,0 +1,13 @@
+
+@import url('https://fonts.googleapis.com/css?family=Ewert&display=swap');
+
+
+body {
+    background-color: #ff4e00;
+background-image: linear-gradient(315deg, #ff4e00 0%, #ec9f05 74%);
+
+
+}
+h2 {
+    font-family: 'Ewert', cursive;
+}

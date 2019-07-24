@@ -39,7 +39,7 @@ function objToSql(ob) {
 // insertOne()
 // updateOne()
 var orm = {
-    Selectall: function (tableInput, cb) {
+    selectAll: function (tableInput, cb) {
         var queryString = "SELECT * FROM " + tableInput + ";";
         connection.query(queryString, function (err, result) {
             if (err) {
@@ -58,7 +58,7 @@ var orm = {
         queryString += printQuestionMarks(vals.length);
         queryString += ") ";
 
-        console.log(queryString);
+
 
         connection.query(queryString, vals, function (err, result) {
             if (err) {
@@ -73,11 +73,11 @@ var orm = {
         var queryString = "UPDATE " + table;
 
         queryString += " SET ";
-        queryString += objToSql(objColVals);
+        queryString += objColVals;
         queryString += " WHERE ";
         queryString += condition;
 
-        console.log(queryString);
+
         connection.query(queryString, function (err, result) {
             if (err) {
                 throw err;
@@ -88,5 +88,5 @@ var orm = {
     }
 };
 
-// Export the orm object for the model (cat.js).
+// Export the orm object for the model (burger.js).
 module.exports = orm;

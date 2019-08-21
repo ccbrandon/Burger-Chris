@@ -1,8 +1,6 @@
-// IMPORT MYSQL CONNECTION
-var connection = require("../config/connection.js");
 
+var connection = require("./connection.js");
 
-/////HELPER FUNCTIONS
 function printQuestionMarks(num) {
     var arr = [];
 
@@ -34,13 +32,12 @@ function objToSql(ob) {
     return arr.toString();
 }
 
-// ORM FOR SQL
-// selectAll()
-// insertOne()
-// updateOne()
+
+
 var orm = {
     selectAll: function (tableInput, cb) {
         var queryString = "SELECT * FROM " + tableInput + ";";
+        console.log(queryString)
         connection.query(queryString, function (err, result) {
             if (err) {
                 throw err;
@@ -88,5 +85,5 @@ var orm = {
     }
 };
 
-// Export the orm object for the model (burger.js).
+
 module.exports = orm;
